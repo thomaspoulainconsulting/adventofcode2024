@@ -41,9 +41,7 @@ class Day2 : Day(2, "Red-Nosed Reports") {
         return abs(level1 - level2) in 1..3
     }
 
-
-
     override fun solvePart2(input: List<String>): String {
-        TODO("Not yet implemented")
+       return "TODO"
     }
 }
