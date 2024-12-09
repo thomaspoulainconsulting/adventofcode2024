@@ -7,21 +7,7 @@ import kotlin.test.assertEquals
 class Day4Test : AdventOfCodeTest {
 
     private val day = Day4()
-    private val inputFirst =
-        """
-            MMMSXXMASM
-            MSAMXMSMSA
-            AMXSXMAAMM
-            MSAMASMSMX
-            XMASAMXAMM
-            XXAMMXXAMA
-            SMSMSASXSS
-            SAXAMASAAA
-            MAMMMXMMMM
-            MXMXAXMASX
-        """.trimIndent().split('\n')
-
-    private val inputSecond =
+    private val input =
         """
             MMMSXXMASM
             MSAMXMSMSA
@@ -38,12 +24,12 @@ class Day4Test : AdventOfCodeTest {
 
     @Test
     override fun solvePart1Test() {
-        assertEquals("18", day.solvePart1(inputFirst))
+        assertEquals("18", day.solvePart1(input))
     }
 
     @Test
     override fun solvePart2Test() {
-        assertEquals("9", day.solvePart2(inputSecond))
+        assertEquals("9", day.solvePart2(input))
     }
 
 }
