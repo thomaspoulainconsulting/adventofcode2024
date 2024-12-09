@@ -4,12 +4,7 @@ class Day3 : Day(3, "Mull It Over") {
 
     override fun solvePart1(input: List<String>): String {
         return "mul(\\(\\d+,\\d+)\\)".toRegex().findAll(input.first())
-            .sumOf {
-                val (a, b) = it.groupValues[1]
-                    .replace("(", "")
-                    .replace(")", "")
-                    .split(",")
-                a.toInt() * b.toInt()
+            .sumOf { match -> multiply(match.groupValues[1])
             }.toString()
     }
 
@@ -18,13 +13,16 @@ class Day3 : Day(3, "Mull It Over") {
             val elt = it.split("don't()")
 
             "mul(\\(\\d+,\\d+)\\)".toRegex().findAll(elt.first())
-                .sumOf {
-                    val (a, b) = it.groupValues[1]
-                        .replace("(", "")
-                        .replace(")", "")
-                        .split(",")
-                    a.toInt() * b.toInt()
+                .sumOf { match -> multiply(match.groupValues[1])
                 }
         }.toString()
+    }
+
+    private fun multiply(input: String): Int {
+        val (a, b) = input
+            .replace("(", "")
+            .replace(")", "")
+            .split(",")
+        return a.toInt() * b.toInt()
     }
 }
