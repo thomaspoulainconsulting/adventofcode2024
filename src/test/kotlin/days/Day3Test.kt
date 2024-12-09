@@ -14,12 +14,7 @@ class Day3Test : AdventOfCodeTest {
 
     private val inputSecond =
         """
-            3   4
-            4   3
-            2   5
-            1   3
-            3   9
-            3   3
+            xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))
         """.trimIndent().split('\n')
 
 
@@ -30,7 +25,7 @@ class Day3Test : AdventOfCodeTest {
 
     @Test
     override fun solvePart2Test() {
-        assertEquals("31", day.solvePart2(inputSecond))
+        assertEquals("48", day.solvePart2(inputSecond))
     }
 
 }
