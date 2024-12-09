@@ -42,6 +42,24 @@ class Day2 : Day(2, "Red-Nosed Reports") {
     }
 
     override fun solvePart2(input: List<String>): String {
-       return "TODO"
+       return input.map { it.split(" ").map { it.toInt() } }.count { isSafeReportPart2(it) }.toString()
+    }
+
+    private fun checkSafety(line: List<Int>): Boolean {
+        val differences = line.zipWithNext { a, b -> b - a }
+        val isIncreasing = differences.all { it in 1..3 }
+        val isDecreasing = differences.all { it in -3..-1 }
+        return isIncreasing || isDecreasing
+    }
+
+    private fun isSafeReportPart2(line: List<Int>): Boolean {
+        // Check if already safe
+        if (checkSafety(line)) return true
+
+        // Try removing each element
+        return line.indices.any { removeIndex ->
+            val modifiedReport = line.toMutableList().apply { removeAt(removeIndex) }
+            checkSafety(modifiedReport)
+        }
     }
 }
