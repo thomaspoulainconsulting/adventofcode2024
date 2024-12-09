@@ -23,7 +23,16 @@ class Day4Test : AdventOfCodeTest {
 
     private val inputSecond =
         """
-            
+            MMMSXXMASM
+            MSAMXMSMSA
+            AMXSXMAAMM
+            MSAMASMSMX
+            XMASAMXAMM
+            XXAMMXXAMA
+            SMSMSASXSS
+            SAXAMASAAA
+            MAMMMXMMMM
+            MXMXAXMASX
         """.trimIndent().split('\n')
 
 
@@ -34,7 +43,7 @@ class Day4Test : AdventOfCodeTest {
 
     @Test
     override fun solvePart2Test() {
-        assertEquals("48", day.solvePart2(inputSecond))
+        assertEquals("9", day.solvePart2(inputSecond))
     }
 
 }
